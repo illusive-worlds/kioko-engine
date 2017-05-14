@@ -1,0 +1,19 @@
+toolsets = vs2015;
+
+vs2015.solutionfile = ../VC14/KiokoEngine.sln;
+
+
+library KiokoEngine
+{
+    archs = x86 x86_64;
+
+    headers
+    {
+        ../../Include/Kioko/KiokoEngine.h
+    }
+
+    sources
+    {
+        ../../Source/KiokoEngine.cpp
+    }
+}
