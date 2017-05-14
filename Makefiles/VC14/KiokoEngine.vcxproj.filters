@@ -20,9 +20,18 @@
     <ClInclude Include="..\..\Include\Kioko\KiokoEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Include\Kioko\linkoptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OSG\OpenSceneGraphEngineImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\KiokoEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OSG\OpenSceneGraphEngineImpl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

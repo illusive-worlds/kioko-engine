@@ -2,20 +2,38 @@ toolsets = vs2015;
 
 vs2015.solutionfile = ../VC14/KiokoEngine.sln;
 
+setting OSG_ROOT
+{
+    help = "Path to the OpenSceneGraph installation";
+    default = '$(OSG)';
+}
 
 library KiokoEngine
 {
     archs = x86 x86_64;
 
     includedirs += ../../Include/Kioko;
+    includedirs += $(OSG_ROOT)/include;
+
+    outputdir = ../../Lib/$(arch);
+ 
+    if ($(config) == Debug)
+    {
+        basename = KiokoEngine-d;
+    }
 
     headers
     {
         ../../Include/Kioko/KiokoEngine.h
+        ../../Include/Kioko/linkoptions.h
+
+        ../../Source/OSG/OpenSceneGraphEngineImpl.h
     }
 
     sources
     {
         ../../Source/KiokoEngine.cpp
+
+        ../../Source/OSG/OpenSceneGraphEngineImpl.cpp
     }
 }

@@ -23,4 +23,25 @@
 #ifndef _KIOKO_ENGINE_KIOKOENGINE_H_
 #define _KIOKO_ENGINE_KIOKOENGINE_H_
 
+namespace Kioko
+{
+
+// Forward declaration needed to avoid
+// clients having to include OSG headers
+class OpenSceneGraphEngineImpl;
+
+class Engine
+{
+public:
+    Engine();
+    ~Engine();
+
+private:
+    OpenSceneGraphEngineImpl* m_impl;
+};
+
+}
+
+#include "linkoptions.h"
+
 #endif

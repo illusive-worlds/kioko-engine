@@ -21,3 +21,16 @@
 */
 
 #include "KiokoEngine.h"
+
+namespace Kioko
+{
+
+Engine::Engine()
+{
+}
+
+Engine::~Engine()
+{
+}
+
+}

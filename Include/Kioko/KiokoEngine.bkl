@@ -7,4 +7,6 @@ setting KIOKO_ENGINE_ROOT
 template KiokoEngine
 {
     includedirs += $(KIOKO_ENGINE_ROOT)/Include;
+
+    libdirs += $(KIOKO_ENGINE_ROOT)/Lib/$(arch);
 }
