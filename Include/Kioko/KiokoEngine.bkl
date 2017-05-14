@@ -1,0 +1,10 @@
+setting KIOKO_ENGINE_ROOT
+{
+    help = "Path to the Kioko Engine installation";
+    default = '$(KIOKO)';
+}
+
+template KiokoEngine
+{
+    includedirs += $(KIOKO_ENGINE_ROOT)/Include;
+}
