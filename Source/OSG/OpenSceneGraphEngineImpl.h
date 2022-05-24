@@ -30,6 +30,10 @@ namespace Kioko
 
 class OpenSceneGraphEngineImpl
 {
+public:
+    OpenSceneGraphEngineImpl();
+    ~OpenSceneGraphEngineImpl();
+
 private:
     osgViewer::Viewer m_viewer;
 };

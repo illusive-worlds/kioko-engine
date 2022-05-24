@@ -21,16 +21,19 @@
 */
 
 #include "KiokoEngine.h"
+#include "OSG/OpenSceneGraphEngineImpl.h"
 
 namespace Kioko
 {
 
 Engine::Engine()
 {
+    m_impl = new OpenSceneGraphEngineImpl();
 }
 
 Engine::~Engine()
 {
+    delete m_impl;
 }
 
 }

@@ -21,3 +21,52 @@
 */
 
 #include "OpenSceneGraphEngineImpl.h"
+#include <osg/ShapeDrawable>
+#include <osgGA/FlightManipulator>
+
+namespace Kioko
+{
+
+OpenSceneGraphEngineImpl::OpenSceneGraphEngineImpl()
+{
+    m_viewer.setUpViewInWindow(0, 0, 800, 800);
+
+    osg::ref_ptr<osg::ShapeDrawable> shape1 = new osg::ShapeDrawable;
+    shape1->setShape(new osg::Box(osg::Vec3(-3.0f, 0.0f, 0.0f),
+        2.0f, 2.0f, 1.0f));
+
+    osg::ref_ptr<osg::ShapeDrawable> shape2 = new osg::ShapeDrawable;
+    shape2->setShape(new osg::Sphere(osg::Vec3(3.0f, 0.0f, 0.0f),
+        1.0f));
+    shape2->setColor(osg::Vec4(0.0f, 0.0f, 1.0f, 1.0f));
+
+    osg::ref_ptr<osg::Geode> root = new osg::Geode;
+    root->addDrawable(shape1.get());
+    //root->addDrawable(shape2.get());
+
+    m_viewer.setSceneData(root.get());
+
+    
+    //m_viewer.setCameraManipulator(new osgGA::FlightManipulator());
+
+    osg::Vec3d eye(5.0, 5.0, 0.0);
+    osg::Vec3d center(1.0, 1.0, 1.0);
+    osg::Vec3d up(0.0, 0.0, 1.0);
+
+    m_viewer.getCamera()->setViewMatrixAsLookAt(eye, center, up);
+
+    //m_viewer.run();
+
+    m_viewer.realize();
+    while (!m_viewer.done())
+    {
+        m_viewer.frame();
+    }
+
+}
+
+OpenSceneGraphEngineImpl::~OpenSceneGraphEngineImpl()
+{
+}
+
+}
